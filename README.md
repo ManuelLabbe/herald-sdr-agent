@@ -1,2 +1,2 @@
-# langchain-agents
+# tiny-town
 
