@@ -1,8 +1,7 @@
 from langchain.messages import AIMessage
 from langgraph.graph import StateGraph, START, END
-from tiny_town.utils.state import AgentState
-from tiny_town.utils.nodes import call_model, tool_node, should_continue, call_reviewer
-
+from tiny_town.subgraphs.town.state import AgentState
+from tiny_town.subgraphs.town.nodes import call_model, tool_node, should_continue, call_reviewer
 
 
 workflow = StateGraph(AgentState)

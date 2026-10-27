@@ -2,15 +2,15 @@ from typing import Literal
 from langchain.messages import SystemMessage, HumanMessage
 from langgraph.graph import END
 
-from tiny_town.utils.models import main_model, light_model
-from tiny_town.utils.messages import only_text
+from tiny_town.shared.models import main_model, light_model
+from tiny_town.shared.messages import only_text
 from tiny_town.subgraphs.reviewer.state import WorkerState, Evaluation
 
 evaluator = light_model.with_structured_output(Evaluation)
 
 def evaluate(state: WorkerState):
     result = evaluator.invoke([
-        SystemMessages(
+        SystemMessage(
             "Eres un revisor. Evalúa si la respuesta del usuario contiene errores,"
             "imprecisiones o información inventada. No evalúes estilo."
         ),
@@ -24,7 +24,7 @@ def evaluate(state: WorkerState):
 
 def fix_draft(state: WorkerState):
     response = main_model.invoke([
-        SystemMessages(
+        SystemMessage(
             "Corrige la respuesta que te entregue el usuario."
             "Devuelve solo la versión final, sin comentarios."
         ),
