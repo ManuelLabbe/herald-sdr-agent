@@ -6,9 +6,9 @@ from langchain.messages import SystemMessage
 from langgraph.graph import END
 from langgraph.prebuilt import ToolNode
 
-from tiny_town.subgraphs.town.tools import tools
-from tiny_town.subgraphs.town.state import AgentState
-from tiny_town.subgraphs.worker import worker_graph
+from herald_sdr_agent.subgraphs.town.tools import tools
+from herald_sdr_agent.subgraphs.town.state import AgentState
+from herald_sdr_agent.subgraphs.reviewer.graph import worker_graph
 
 model = ChatGoogleGenerativeAI(model="gemini-3.5-flash-lite")
 model_with_tools = model.bind_tools(tools)

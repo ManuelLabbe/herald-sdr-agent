@@ -1,2 +1,2 @@
-# tiny-town
+# Herald SDR Agent
 

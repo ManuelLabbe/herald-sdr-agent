@@ -1,7 +1,7 @@
 {
     "dependencies": ["./tiny_town"],
     "graphs": {
-        "agents": "./tiny_town/agent.py:graph",
+        "agents": "./tiny_town/subgraphs/town/agent.py:graph",
         "reviewer": "./tiny_town/subgraphs/reviewer/graph.py:worker_graph"
     },
     "env":".env"
